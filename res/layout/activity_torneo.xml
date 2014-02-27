@@ -1,0 +1,140 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".TorneoActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/proximo_partido"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/marcador1"
+        android:layout_width="@dimen/width_text2"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/jugador1"
+        android:layout_alignBottom="@+id/jugador1"
+        android:layout_toRightOf="@+id/btningresarresult"
+        android:ems="10"
+        android:inputType="number" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/jugador2"
+        android:layout_below="@+id/marcador1"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/VS"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/jugador1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/jugador1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/btningresarresult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/marcador2"
+        android:layout_marginTop="15dp"
+        android:text="@string/ingresar_resultados" />
+
+    <EditText
+        android:id="@+id/marcador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/marcador1"
+        android:layout_alignRight="@+id/marcador1"
+        android:layout_alignTop="@+id/textView3"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/jugador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/jugador1"
+        android:layout_below="@+id/textView3"
+        android:text="@string/jugador2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/btningresarresult"
+        android:layout_below="@+id/btningresarresult"
+        android:text="@string/siguientes_partidos"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ListView
+        android:id="@+id/listPartido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Layoutmenu"
+        android:layout_alignLeft="@+id/TextView02"
+        android:layout_below="@+id/TextView02" >
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/Layoutmenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/listPartido"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnprin"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="@string/principal"
+            android:onClick="iraprincipalOnClickHandler" />
+
+        <Button
+            android:id="@+id/btneditpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor"
+            android:onClick="iraeditarOnClickHandler" />
+
+        <Button
+            android:id="@+id/btntabla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tabla_posiciones" 
+            android:onClick="iratablaOnClickHandler"/>
+
+        <Button
+            android:id="@+id/btnsalir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir"
+            android:onClick="irasalirOnClickHandler" />
+
+    </LinearLayout>
+   
+</RelativeLayout>

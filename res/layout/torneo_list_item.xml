@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/torneo_name"
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.86"
+        android:text="@string/escogertorneo"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/torneo_removePay"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/delete"
+        android:onClick="removeTorneoOnClickHandler"
+        android:src="@android:drawable/ic_menu_delete" />
+
+    <ImageButton
+        android:id="@+id/torneo_goPay"
+        android:layout_width="@dimen/width_button"
+        android:layout_height="fill_parent"
+        android:contentDescription="@string/delete"
+        android:onClick="iraTorneoOnClickHandler"
+        android:src="@android:drawable/ic_media_ff" />
+
+</LinearLayout>

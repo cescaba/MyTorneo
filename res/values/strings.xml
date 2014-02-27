@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Mi Torneo</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_nuevo">Nuevo Torneo</string>
+    <string name="title_activity_load">Cargar Torneo</string>
+    <string name="icono">Icono</string>
+    <string name="nuevo">Nuevo</string>
+    <string name="cargar">Cargar</string>
+    <string name="lbl1">Nombre del Titulo</string>
+    <string name="lbl2">Jugadores</string>
+    <string name="add">Añadir Jugador</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="escogertorneo">Escoger Torneo</string>
+    <string name="EnterPays_atomPay_nameHint">Ingresa Nombre</string>
+    <string name="delete">Eliminar</string>
+    <string name="title_activity_torneo">TorneoActivity</string>
+     <string name="proximo_partido">Proximo Partido</string>
+    <string name="jugador1">Jugador 1</string>
+    <string name="jugador2">Jugador 2</string>
+    <string name="VS">VS</string>
+    <string name="ingresar_resultados">Ingresar Resultados</string>
+    <string name="siguientes_partidos">Partidos Restantes de la Fecha</string>
+    <string name="principal">Principal</string>
+    <string name="editor">Editar</string>
+    <string name="tabla_posiciones">Tabla</string>
+    <string name="salir">Salir</string>
+
+</resources>
