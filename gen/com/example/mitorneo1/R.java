@@ -31,30 +31,41 @@ public final class R {
     }
     public static final class id {
         public static final int Layoutmenu=0x7f080014;
-        public static final int MnuOpc1=0x7f08001f;
-        public static final int MnuOpc2=0x7f080020;
-        public static final int MnuOpc3=0x7f080021;
+        public static final int MnuOpc1=0x7f08002a;
+        public static final int MnuOpc2=0x7f08002b;
+        public static final int MnuOpc3=0x7f08002c;
         public static final int TextView02=0x7f080012;
-        public static final int action_settings=0x7f08001e;
+        public static final int action_settings=0x7f080029;
         public static final int btnagregar=0x7f080007;
         public static final int btncargar=0x7f080004;
         public static final int btneditpa=0x7f080016;
+        public static final int btneditpaedit=0x7f08001f;
+        public static final int btngrabaredit=0x7f080022;
         public static final int btningresarresult=0x7f08000e;
         public static final int btnnueva=0x7f080003;
         public static final int btnprin=0x7f080015;
+        public static final int btnprinedit=0x7f08001e;
         public static final int btnsalir=0x7f080018;
+        public static final int btnsaliredi=0x7f080021;
         public static final int btnsiguiente=0x7f08000a;
         public static final int btntabla=0x7f080017;
-        public static final int group1=0x7f080022;
+        public static final int btntablaedit=0x7f080020;
+        public static final int editjugador1=0x7f080019;
+        public static final int editjugador2=0x7f08001b;
+        public static final int editmarcador1=0x7f08001c;
+        public static final int editmarcador2=0x7f08001a;
+        public static final int fragment_container=0x7f080025;
+        public static final int group1=0x7f08002d;
         public static final int imgicono=0x7f080002;
-        public static final int item1=0x7f080023;
+        public static final int item1=0x7f08002e;
         public static final int jugador1=0x7f08000d;
         public static final int jugador2=0x7f080010;
-        public static final int jugador_name=0x7f080019;
-        public static final int jugador_removePay=0x7f08001a;
+        public static final int jugador_name=0x7f080023;
+        public static final int jugador_removePay=0x7f080024;
         public static final int lblescoger=0x7f080000;
         public static final int lbljugadores=0x7f080008;
         public static final int lbltitulo=0x7f080006;
+        public static final int linearLayout1=0x7f08001d;
         public static final int listJugadores=0x7f080009;
         public static final int listPartido=0x7f080013;
         public static final int listtorneo=0x7f080001;
@@ -62,9 +73,9 @@ public final class R {
         public static final int marcador2=0x7f080011;
         public static final int textView1=0x7f08000b;
         public static final int textView3=0x7f08000f;
-        public static final int torneo_goPay=0x7f08001d;
-        public static final int torneo_name=0x7f08001b;
-        public static final int torneo_removePay=0x7f08001c;
+        public static final int torneo_goPay=0x7f080028;
+        public static final int torneo_name=0x7f080026;
+        public static final int torneo_removePay=0x7f080027;
         public static final int txttitulo=0x7f080005;
     }
     public static final class layout {
@@ -72,16 +83,19 @@ public final class R {
         public static final int activity_main=0x7f030001;
         public static final int activity_nuevo=0x7f030002;
         public static final int activity_torneo=0x7f030003;
-        public static final int jugador_list_item=0x7f030004;
-        public static final int torneo_list_item=0x7f030005;
+        public static final int editor_partido=0x7f030004;
+        public static final int jugador_list_item=0x7f030005;
+        public static final int partidos_jugados=0x7f030006;
+        public static final int torneo_list_item=0x7f030007;
     }
     public static final class menu {
-        public static final int load=0x7f070000;
-        public static final int main=0x7f070001;
-        public static final int menu_principal=0x7f070002;
-        public static final int nuevo=0x7f070003;
-        public static final int prueba=0x7f070004;
-        public static final int torneo=0x7f070005;
+        public static final int editar=0x7f070000;
+        public static final int load=0x7f070001;
+        public static final int main=0x7f070002;
+        public static final int menu_principal=0x7f070003;
+        public static final int nuevo=0x7f070004;
+        public static final int prueba=0x7f070005;
+        public static final int torneo=0x7f070006;
     }
     public static final class string {
         public static final int EnterPays_atomPay_nameHint=0x7f05000d;
@@ -93,6 +107,7 @@ public final class R {
         public static final int delete=0x7f05000e;
         public static final int editor=0x7f050017;
         public static final int escogertorneo=0x7f05000c;
+        public static final int grabar=0x7f05001b;
         public static final int hello_world=0x7f050002;
         public static final int icono=0x7f050005;
         public static final int ingresar_resultados=0x7f050014;
@@ -107,6 +122,7 @@ public final class R {
         public static final int siguiente=0x7f05000b;
         public static final int siguientes_partidos=0x7f050015;
         public static final int tabla_posiciones=0x7f050018;
+        public static final int title_activity_editar=0x7f05001a;
         public static final int title_activity_load=0x7f050004;
         public static final int title_activity_nuevo=0x7f050003;
         public static final int title_activity_torneo=0x7f05000f;

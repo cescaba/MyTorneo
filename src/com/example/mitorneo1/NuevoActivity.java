@@ -110,8 +110,6 @@ public View.OnClickListener ListenerGrabarTorneo(final ArrayList<Jugador> list, 
 			i.putExtra("torneo", torneo);
 			finish();
 			startActivity(i);
-			
-			
 		}
 	};
 		return listener;

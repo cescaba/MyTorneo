@@ -17,7 +17,7 @@
     <string name="EnterPays_atomPay_nameHint">Ingresa Nombre</string>
     <string name="delete">Eliminar</string>
     <string name="title_activity_torneo">TorneoActivity</string>
-     <string name="proximo_partido">Proximo Partido</string>
+    <string name="proximo_partido">Proximo Partido</string>
     <string name="jugador1">Jugador 1</string>
     <string name="jugador2">Jugador 2</string>
     <string name="VS">VS</string>
@@ -27,5 +27,7 @@
     <string name="editor">Editar</string>
     <string name="tabla_posiciones">Tabla</string>
     <string name="salir">Salir</string>
+    <string name="title_activity_editar">EditarActivity</string>
+    <string name="grabar">Grabar</string>
 
 </resources>

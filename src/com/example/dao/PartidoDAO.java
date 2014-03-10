@@ -87,7 +87,7 @@ public class PartidoDAO {
 		String where = BaseDeDatos.C_COLUMNA_ID_PAR+" = '"+partido.getId()+"'";
 		where = where + " AND "+BaseDeDatos.C_COLUMNA_ID_TOR_PAR+" = '"+partido.getId_torneo()+"'";
 		long x = database.update(BaseDeDatos.C_TABLA_PARTIDO, valores,where, null);
-		System.out.println("DEVOLVIO ESTO: "+x+"y el where: "+where);
+		System.out.println("DEVOLVIO ESTO: "+x+"y el where: "+where+" y el juga_gan "+partido.getId_juga_gan());
 		return x;
 	}
 	
@@ -103,5 +103,17 @@ public class PartidoDAO {
 		}	
 		return partido;
 	}
-	
+	public List<Partido> obtenerlistadepartidos(long id_torneo){
+		List<Partido> partidos = new ArrayList<Partido>();
+		
+		//Cursor c = database.query(BaseDeDatos.C_TABLA_JUGADOR, colum_jugador,null,null,null,null,null);
+		Cursor c = database.rawQuery("SELECT * FROM partido where id_torneo='"+id_torneo+"' and id_juga_gan >= 0", new String [] {});
+		
+		for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
+			Partido partido = cursorToPartido(c);
+			partidos.add(partido);
+		}
+		c.close();
+		return partidos;
+	}
 	}

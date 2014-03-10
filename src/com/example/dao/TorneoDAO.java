@@ -75,4 +75,15 @@ public class TorneoDAO{
 		database.delete(BaseDeDatos.C_TABLA_TORNEO, BaseDeDatos.C_COLUMNA_ID + " = "+ id, null);
 	}
 	
+	public Torneo obtenerxid(long id){
+		Torneo torneo = null;
+		Cursor c = database.rawQuery("SELECT * FROM torneo where _ID='"+id+"'", new String [] {});
+		if(c.getCount()>0){
+			System.out.println("encontre");
+			c.moveToFirst();
+			torneo = cursorToTorneo(c);
+			c.close();
+		}	
+		return torneo;
+	}
 }

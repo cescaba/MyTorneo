@@ -34,6 +34,10 @@
             android:name="com.example.mitorneo1.TorneoActivity"
             android:label="@string/title_activity_torneo" >
         </activity>
+        <activity
+            android:name="com.example.mitorneo1.EditarActivity"
+            android:label="@string/title_activity_editar" >
+        </activity>
     </application>
 
 </manifest>

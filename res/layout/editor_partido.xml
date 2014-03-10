@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/editjugador1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="31dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/jugador1"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editmarcador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editjugador2"
+        android:layout_alignLeft="@+id/editmarcador1"
+        android:layout_alignRight="@+id/editmarcador1"
+        android:ems="10"
+        android:inputType="number" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="72dp" >
+
+        <Button
+            android:id="@+id/btnprinedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/principal"
+            android:onClick="iraprincipalOnClickHandler" />
+
+        <Button
+            android:id="@+id/btneditpaedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor"
+            android:onClick="iraeditarOnClickHandler" />
+
+        <Button
+            android:id="@+id/btntablaedit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tabla_posiciones" 
+            android:onClick="iratablaOnClickHandler" />
+
+        <Button
+            android:id="@+id/btnsaliredi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/salir"
+            android:onClick="irasalirOnClickHandler" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editmarcador1"
+        android:layout_width="@dimen/width_text2"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/editjugador1"
+        android:layout_alignBottom="@+id/editjugador1"
+        android:layout_toRightOf="@+id/btngrabaredit"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btngrabaredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:text="@string/grabar" />
+
+    <TextView
+        android:id="@+id/editjugador2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btngrabaredit"
+        android:layout_alignLeft="@+id/editjugador1"
+        android:layout_marginBottom="44dp"
+        android:text="@string/jugador2"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editmarcador2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="35dp"
+        android:text="@string/VS"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

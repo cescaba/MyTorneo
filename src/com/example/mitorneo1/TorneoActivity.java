@@ -38,6 +38,7 @@ public class TorneoActivity extends Activity {
 	long idfecha = 0;
 	List<String> listapartidos;
 	ListView listView;
+	Torneo torneo;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,7 +55,7 @@ public class TorneoActivity extends Activity {
 		helper = new JugadorDAO(this);	
 		helperpartido = new PartidoDAO(this);
 		Bundle bundle = getIntent().getExtras();
-		Torneo torneo = (Torneo)bundle.get("torneo");
+		torneo = (Torneo)bundle.get("torneo");
 		idtorneo = torneo.getId();
 		helper.abrir();
 		List<Jugador> jugadores = helper.leerJugadores(torneo.getId());
@@ -147,7 +148,7 @@ public class TorneoActivity extends Activity {
 			}else{
 				mostraralerta("Se realizaron todo los partidos.");
 			}
-			listapartidos.clear();
+			//listapartidos.clear();
 			partidosnojugados(idfecha);
 		}
 	};
@@ -181,9 +182,15 @@ public class TorneoActivity extends Activity {
 	}
 	
 	public void partidosnojugados(long idfecha){
+		listapartidos.clear();
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, listapartidos);
+		listView.setAdapter(adapter);
 		for(int i = 0; i<partidos.size();i++){
+			System.out.println("Antes de partidosnojugados: "+partidos.get(i).getId_juga_gan()+"en el Partido : "+partidos.get(i).getId());
 			if(partidos.get(i).getNum_fecha() == idfecha && partidos.get(i).getId_juga_gan() == -1){
 				listapartidos.add(helper.obtenerxid(partidos.get(i).getId_juga1(),partidos.get(i).getId_torneo())+" vs. "+helper.obtenerxid(partidos.get(i).getId_juga2(),partidos.get(i).getId_torneo()));
+				System.out.println("En partidosnojugados: "+helper.obtenerxid(partidos.get(i).getId_juga1(),partidos.get(i).getId_torneo())+" vs. "+helper.obtenerxid(partidos.get(i).getId_juga2(),partidos.get(i).getId_torneo()));
 			}
 		}
 	}
@@ -191,5 +198,12 @@ public class TorneoActivity extends Activity {
 		Intent i = new Intent(this, MainActivity.class);
 		finish();
 		startActivity(i);
-		}
+	}
+	public void iraeditarOnClickHandler(View v) {
+		Intent i = new Intent(this, EditarActivity.class);
+		i.putExtra("torneo", torneo);
+		System.out.println("TorneoActivity idtorneo: "+torneo.getId());
+		finish();
+		startActivity(i);
+	}
 }
