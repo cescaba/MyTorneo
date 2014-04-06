@@ -15,11 +15,15 @@ import android.widget.EditText;
 import android.widget.ListView;
 import com.example.bean.*;
 import com.example.dao.*;
+import com.example.util.GeneradorTorneo;
 import com.example.adapter.*;
 public class NuevoActivity extends Activity {
 	JugadorListAdapter adapter;
 	JugadorDAO helper;
 	TorneoDAO helper2;
+	PartidoDAO helper3; //V1.4 CJCA
+	GeneradorTorneo aux; //V1.4 CJCA
+	List<Partido> partidos; //V1.4 CJCA
 	int q = 0;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,7 @@ public class NuevoActivity extends Activity {
 		
 		helper = new JugadorDAO(this);
 		helper2 = new TorneoDAO(this);
+		helper3 = new PartidoDAO(this);
 		
 		//controles
 		final Button btnadd = (Button)findViewById(R.id.btnagregar);
@@ -89,23 +94,38 @@ public View.OnClickListener ListenerGrabarTorneo(final ArrayList<Jugador> list, 
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			// TODO Auto-generated method stub
+			helper2.abrir();
+			helper.abrir();
+			helper3.abrir();
 			EditText nomtorneo = (EditText)findViewById(R.id.txttitulo);
 			String nombre = nomtorneo.getText().toString();
 			Torneo torneo = new Torneo();
+			
 			if(nombre != ""){
 				torneo.setName(nombre);
 			}
 			torneo.setNum_juga(list.size());
-			helper2.abrir();
+			
 			torneo = helper2.insertarTorneo(torneo);
-			helper2.cerrar();
-			//MAH INI
-			helper.abrir();
+			
 			for(int i = 0; i < list.size();i++){
 				helper.insertarJugador(list.get(i).getName(), torneo.getId(),torneo.getNum_juga());	
 			}
+			//V1.4 CJCA INI
+			List<Jugador> jugadores = helper.leerJugadores(torneo.getId());
+			aux = new GeneradorTorneo();
+			partidos = aux.generarFechas(torneo, jugadores); 
+			
+			for(int i = 0;i<partidos.size();i++){
+				System.out.println("Partido es id: "+partidos.get(i).getId()+" entre: "+partidos.get(i).getId_juga1()+" y "+partidos.get(i).getId_juga2());
+				helper3.insertarPartido(partidos.get(i));
+			}
+			
 			helper.cerrar();
-			//MAH FIN
+			helper2.cerrar();
+			helper3.cerrar();
+			//V1.4 CJCA FIN
+			
 			Intent i = new Intent(ctx, TorneoActivity.class);
 			i.putExtra("torneo", torneo);
 			finish();

@@ -116,4 +116,17 @@ public class PartidoDAO {
 		c.close();
 		return partidos;
 	}
+	public List<Partido> obtenerpartidotorneo(long id_torneo){
+		List<Partido> partidos = new ArrayList<Partido>();
+		
+		//Cursor c = database.query(BaseDeDatos.C_TABLA_JUGADOR, colum_jugador,null,null,null,null,null);
+		Cursor c = database.rawQuery("SELECT * FROM partido where id_torneo='"+id_torneo+"' ", new String [] {});
+		
+		for(c.moveToFirst();!c.isAfterLast();c.moveToNext()){
+			Partido partido = cursorToPartido(c);
+			partidos.add(partido);
+		}
+		c.close();
+		return partidos;
+	}
 	}

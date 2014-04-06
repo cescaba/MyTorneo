@@ -43,34 +43,42 @@ public class TorneoActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_torneo);
-		listapartidos = new ArrayList<String>();
+		
 		btningreso = (Button)findViewById(R.id.btningresarresult);
 		jugador1 = (TextView)findViewById(R.id.jugador1);
 		jugador2 = (TextView)findViewById(R.id.jugador2);
 		goles1 = (TextView)findViewById(R.id.marcador1);
 		goles2 = (TextView)findViewById(R.id.marcador2);
 		listView = (ListView) findViewById(R.id.listPartido);
-		goles1.setText("0");
-		goles2.setText("0");
-		helper = new JugadorDAO(this);	
-		helperpartido = new PartidoDAO(this);
+		
 		Bundle bundle = getIntent().getExtras();
 		torneo = (Torneo)bundle.get("torneo");
 		idtorneo = torneo.getId();
+		
+		listapartidos = new ArrayList<String>();
+		helper = new JugadorDAO(this);	
+		helperpartido = new PartidoDAO(this);
+		
+		goles1.setText("0");
+		goles2.setText("0");
 		helper.abrir();
-		List<Jugador> jugadores = helper.leerJugadores(torneo.getId());
-		//helper.cerrar();
-		aux = new GeneradorTorneo();
-		partidos = aux.generarFechas(torneo, jugadores);
 		helperpartido.abrir();
-		for(int i = 0;i<partidos.size();i++){
-			System.out.println("Partido es id: "+partidos.get(i).getId()+" entre: "+partidos.get(i).getId_juga1()+" y "+partidos.get(i).getId_juga2());
-			helperpartido.insertarPartido(partidos.get(i));
-		}
+		
+		//List<Jugador> jugadores = helper.leerJugadores(torneo.getId()); V1.4 CJCA
+		//aux = new GeneradorTorneo(); V1.4 CJCA
+		//partidos = aux.generarFechas(torneo, jugadores); V1.4 CJCA
+		
+		/*V1.4 CJCA INI
+		//for(int i = 0;i<partidos.size();i++){
+		//	System.out.println("Partido es id: "+partidos.get(i).getId()+" entre: "+partidos.get(i).getId_juga1()+" y "+partidos.get(i).getId_juga2());
+		//	helperpartido.insertarPartido(partidos.get(i));
+		} V1.4 CJCA FIN */
+		
 		String texto1 = "";
 		String texto2 = "";
-		//helperpartido.cerrar();
-		//helper.abrir();
+
+		partidos = helperpartido.obtenerpartidotorneo(idtorneo); //V 1.4 CJCA
+		
 		for(int i = 0; i<partidos.size();i++){
 			if(partidos.get(i).getId_juga_gan() == -1){
 				texto1 = helper.obtenerxid(partidos.get(i).getId_juga1(),partidos.get(i).getId_torneo());

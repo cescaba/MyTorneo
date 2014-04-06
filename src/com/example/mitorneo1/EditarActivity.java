@@ -8,14 +8,17 @@ import com.example.bean.Partido;
 import com.example.bean.Torneo;
 import com.example.dao.PartidoDAO;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.view.Menu;
+import android.view.View;
 
 public class EditarActivity extends FragmentActivity 
 	implements ListaPartidosFragment.OnHeadlineSelectedListener{
 	long id_torneo = 0;
+	Torneo torneo;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,7 +27,7 @@ public class EditarActivity extends FragmentActivity
         // the fragment_container FrameLayout. If so, we must add the first fragment
         if (findViewById(R.id.fragment_container) != null) {
         	Bundle bundle = getIntent().getExtras();
-    		Torneo torneo = (Torneo)bundle.get("torneo");
+    		torneo = (Torneo)bundle.get("torneo");
     		
             // However, if we're being restored from a previous state,
             // then we don't need to do anything and should return or else
@@ -91,4 +94,16 @@ public class EditarActivity extends FragmentActivity
 	            transaction.commit();
 	        //}
 	    }
+	 public void irasalirOnClickHandler(View v) {
+			Intent i = new Intent(this, MainActivity.class);
+			finish();
+			startActivity(i);
+		}
+	
+	public void iraprincipalOnClickHandler(View v){
+			Intent i = new Intent(this, TorneoActivity.class);
+			i.putExtra("torneo", torneo);
+			finish();
+			startActivity(i);
+	}
 }
